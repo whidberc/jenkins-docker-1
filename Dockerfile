@@ -1,6 +1,11 @@
-FROM registry.fedoraproject.org/fedora:34
+FROM ubuntu
 
-RUN dnf install -y python3 python3-pip
+WORKDIR /usr/src/myapp
+COPY requirements.txt ./
+
+RUN apt-get update -y
+RUN apt-get install -y python3-pip
+RUN echo Hola
 
 COPY . .
 
