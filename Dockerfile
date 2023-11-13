@@ -1,10 +1,3 @@
-FROM ubuntu
-
-WORKDIR /usr/src/myapp
-COPY requirements.txt ./
+FROM node:ubuntu
 
 RUN apt-get update -y
-
-COPY . .
-
-ENTRYPOINT ["python3"]
